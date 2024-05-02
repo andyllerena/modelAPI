@@ -1,0 +1,19 @@
+runtime: python39  # Supported runtime environment on Google App Engine
+entrypoint: gunicorn -b :$PORT api:app  # Use gunicorn to serve the app, referencing the Flask instance in app.py
+
+env_variables:
+  SECRET_KEY: "1234"  # Ensure this key is strong and securely generated
+  # You can add other environment variables as needed
+
+instance_class: F4_1G  # Increase instance class to allocate more memory (adjust as needed)
+
+automatic_scaling:
+  min_instances: 1  # Minimum number of instances to keep running
+  max_instances: 5  # Maximum number of instances to scale up to
+  target_cpu_utilization: 0.65  # Target CPU utilization for autoscaling
+  target_throughput_utilization: 0.8  # Target throughput utilization for autoscaling
+
+handlers:
+- url: /.*
+  script: auto
+

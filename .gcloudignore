@@ -1,0 +1,53 @@
+# This file specifies files that are *not* uploaded to Google Cloud
+# using gcloud. It follows the same syntax as .gitignore.
+
+.gcloudignore
+.git
+.gitignore
+
+# Python cache and virtual environments:
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+envname/  # Exclude the virtual environment directory
+
+# Python build and distribution:
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Configurations:
+/setup.cfg
+*.ini
+*.yml
+
+# Logs and databases:
+*.log
+*.sql
+*.sqlite
+
+# Node modules if using Node.js:
+node_modules/
+
+# System files:
+.DS_Store
+Thumbs.db
+
+# Editor directories and files:
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# Ignore private keys and credentials:
+*.pem
+*.key
+secrets.json
+
+# Other unnecessary files:
+tmp/
+tests/
+docs/
